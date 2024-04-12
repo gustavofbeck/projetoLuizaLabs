@@ -25,9 +25,13 @@ qualidade.
 
 * JDK 17 instalado e configurado corretamente no seu ambiente.
 * Docker instalado e configura corretamente no seu ambiente.
-*
     * Executar o docker-compose.yml disponível para subir um MongoDB local
-* Plugin do Lombok instalado
+* Plugin do Lombok instalado e configurado:
+    * Preferences (Ctrl + Alt + S)
+    * Build, Execution, Deployment
+    * Compiler
+    * Annotation Processors
+    * Enable annotation processing
 
 ### Sobre a aplicação
 
