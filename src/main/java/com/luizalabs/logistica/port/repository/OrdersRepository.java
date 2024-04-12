@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface OrdersRepository extends MongoRepository<OrdersEntity, String> {
 
-    OrdersEntity findByOrderId(final Integer orderId);
+    OrdersEntity findFirstByOrderId(final Integer orderId);
 
     @Query("{ 'date' : { $gte: ?0, $lte: ?1 } }")
     List<OrdersEntity> findByDateBetween(final LocalDate startDate, final LocalDate endDate);

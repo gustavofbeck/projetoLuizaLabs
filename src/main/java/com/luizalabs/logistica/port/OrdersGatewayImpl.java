@@ -56,7 +56,7 @@ public class OrdersGatewayImpl implements OrdersGateway {
     public Orders findByOrderId(final Integer orderId) {
         try {
             log.info("Finding order by orderId in database");
-            return this.ordersEntityMapper.toDomain(this.ordersRepository.findByOrderId(orderId));
+            return this.ordersEntityMapper.toDomain(this.ordersRepository.findFirstByOrderId(orderId));
         } catch (final Exception e) {
             log.error("Error finding order by order id in database.");
             throw new DataBaseErrorException("Database error: " + e.getMessage());

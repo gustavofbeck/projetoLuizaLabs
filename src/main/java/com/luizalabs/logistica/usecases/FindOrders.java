@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -16,7 +17,12 @@ public class FindOrders {
 
     public List<Orders> execute(final Integer orderId, final LocalDate startDate, final LocalDate endDate) {
         if (orderId != null) {
-            return List.of(this.ordersGateway.findByOrderId(orderId));
+            final List<Orders> ordersList = new ArrayList<>();
+            final Orders orders = this.ordersGateway.findByOrderId(orderId);
+            if (orders != null) {
+                ordersList.add(orders);
+            }
+            return ordersList;
         } else if (startDate != null && endDate != null) {
             return this.ordersGateway.findByStartDateAndEndDate(startDate, endDate);
         } else {

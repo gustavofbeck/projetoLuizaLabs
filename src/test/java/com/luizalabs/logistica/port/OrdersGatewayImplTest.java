@@ -77,7 +77,7 @@ class OrdersGatewayImplTest {
         final Integer orderId = 1;
         final OrdersEntity ordersEntity = createOrdersEntity(1, "Gustavo Felipe", 1, 2, BigDecimal.valueOf(200), LocalDate.parse("2024-01-10"));
 
-        when(this.ordersRepository.findByOrderId(orderId)).thenReturn(ordersEntity);
+        when(this.ordersRepository.findFirstByOrderId(orderId)).thenReturn(ordersEntity);
         when(this.ordersEntityMapper.toDomain(any())).thenReturn(createOrders(1, "Gustavo Felipe", 1, 2, BigDecimal.valueOf(200), LocalDate.parse("2024-01-10")));
 
         final Orders orders = this.ordersGateway.findByOrderId(orderId);
@@ -135,7 +135,7 @@ class OrdersGatewayImplTest {
     @Test
     void shouldThrowDataBaseErrorExceptionWhenFindByOrderIdFails() {
         final Integer orderId = 1;
-        when(this.ordersRepository.findByOrderId(orderId)).thenThrow(new RuntimeException());
+        when(this.ordersRepository.findFirstByOrderId(orderId)).thenThrow(new RuntimeException());
 
         assertThrows(DataBaseErrorException.class, () -> this.ordersGateway.findByOrderId(orderId));
     }

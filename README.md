@@ -7,7 +7,7 @@
 Esse é um microsserviço desenvolvido utilizando Clean Architecture. Foi criado a API realizar a leitura do arquivo e
 salvar no banco de dados (MongoDB) e também foi criada a API para fazer a consulta do pedido, retornando um JSON para
 o usuário, podendo incluir filtros de id do pedido e data inicial/data final. Existem logs por todo o código para ajudar
-a acompanhar o fluxo de um requisição.Por fim, foram criados testes unitários para garantir a funciolidade e uma maior
+a acompanhar o fluxo de um requisição. Por fim, foram criados testes unitários para garantir a funciolidade e uma maior
 qualidade.
 
 ### Tecnologias utilizadas
@@ -35,7 +35,7 @@ qualidade.
 
 ### Sobre a aplicação
 
-Vídeo explicativo:
+Vídeo explicativo: https://www.youtube.com/watch?v=yjSBwWk5UkE
 
 Compilação e Testes
 
@@ -58,3 +58,4 @@ Executando a Aplicação
 * Certifique-se de que todas as dependências foram baixadas e que não há erros de compilação.
 * Certifique-se também que o container do docker do MongoDB está rodando.
 * Inicie a aplicação e acompanhe a saída no console para verificar se tudo está funcionando corretamente.
+* Link do swagger para executar as APIs: http://localhost:8080/swagger-ui/index.html
